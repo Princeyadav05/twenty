@@ -134,6 +134,7 @@ export const SettingsObjectEdit = () => {
             <SettingsDataModelObjectAboutForm
               disabled={!activeObjectMetadataItem.isCustom}
               objectMetadataItem={activeObjectMetadataItem}
+              disableNameEdition
             />
           </Section>
           <Section>

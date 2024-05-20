@@ -366,6 +366,7 @@ export type LoginToken = {
 export type Mutation = {
   __typename?: 'Mutation';
   activateWorkspace: Workspace;
+  addUserToWorkspace: User;
   authorizeApp: AuthorizeApp;
   challenge: LoginToken;
   checkoutSession: SessionEntity;
@@ -407,6 +408,11 @@ export type Mutation = {
 
 export type MutationActivateWorkspaceArgs = {
   data: ActivateWorkspaceInput;
+};
+
+
+export type MutationAddUserToWorkspaceArgs = {
+  inviteHash: Scalars['String']['input'];
 };
 
 
@@ -987,10 +993,6 @@ export type UpdateObjectPayload = {
   imageIdentifierFieldMetadataId?: InputMaybe<Scalars['String']['input']>;
   isActive?: InputMaybe<Scalars['Boolean']['input']>;
   labelIdentifierFieldMetadataId?: InputMaybe<Scalars['String']['input']>;
-  labelPlural?: InputMaybe<Scalars['String']['input']>;
-  labelSingular?: InputMaybe<Scalars['String']['input']>;
-  namePlural?: InputMaybe<Scalars['String']['input']>;
-  nameSingular?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type UpdateOneFieldMetadataInput = {
