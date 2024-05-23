@@ -1,5 +1,5 @@
 import { RemoteTableStatus } from 'src/engine/metadata-modules/remote-server/remote-table/dtos/remote-table.dto';
-import { distantTablesSorter } from 'src/engine/metadata-modules/remote-server/remote-table/utils/distant-tables-sorter.util';
+import { distantTablesSorter } from 'src/engine/metadata-modules/remote-server/remote-table/distant-table/utils/sort-distant-tables.util';
 
 const table1 = {
   status: RemoteTableStatus.SYNCED,

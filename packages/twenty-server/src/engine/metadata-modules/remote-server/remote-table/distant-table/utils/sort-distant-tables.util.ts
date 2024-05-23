@@ -1,6 +1,6 @@
 import { RemoteTableStatus } from 'src/engine/metadata-modules/remote-server/remote-table/dtos/remote-table.dto';
 
-export const distantTablesSorter = (table1, table2) => {
+export const sortDistantTables = (table1, table2) => {
   if (
     table1.status === RemoteTableStatus.SYNCED &&
     table2.status === RemoteTableStatus.NOT_SYNCED

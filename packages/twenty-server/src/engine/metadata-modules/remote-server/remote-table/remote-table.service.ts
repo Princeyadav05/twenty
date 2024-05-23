@@ -31,7 +31,7 @@ import { PostgresTableSchemaColumn } from 'src/engine/metadata-modules/remote-se
 import { fetchTableColumns } from 'src/engine/metadata-modules/remote-server/remote-table/utils/fetch-table-columns.util';
 import { ForeignTableService } from 'src/engine/metadata-modules/remote-server/remote-table/foreign-table/foreign-table.service';
 import { RemoteTableSchemaUpdateService } from 'src/engine/metadata-modules/remote-server/remote-table/remote-table-schema-update/remote-table-schema-update.service';
-import { distantTablesSorter } from 'src/engine/metadata-modules/remote-server/remote-table/utils/distant-tables-sorter.util';
+import { sortDistantTables } from 'src/engine/metadata-modules/remote-server/remote-table/distant-table/utils/sort-distant-tables.util';
 
 export class RemoteTableService {
   private readonly logger = new Logger(RemoteTableService.name);
@@ -101,7 +101,7 @@ export class RemoteTableService {
             : RemoteTableStatus.NOT_SYNCED,
         }));
 
-    return distantTablesWithStatus.sort(distantTablesSorter);
+    return distantTablesWithStatus.sort(sortDistantTables);
   }
 
   public async findRemoteTablesByServerId({
